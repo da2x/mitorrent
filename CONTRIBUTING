@@ -1,0 +1,14 @@
+Guidelines for contributing to mitorrent
+
+Web sites related to the project and distribution:
+https://www.aeyoun.com/projects/mitorrent/index.html (home)
+https://pypi.python.org/pypi/mitorrent (packages)
+https://github.com/Aeyoun/mitorrent (source)
+
+mitorrent is licensed under the BSD 2-Clause License. By contributing your
+code for inclusion, you agree to license your contribution and have it
+distributed under the terms of mitorrent’s license. A copy of the license is
+included in the `LICENSE` file.
+
+Any patches that add value and improve the project will generally be accepted.
+Please, run the tests first (`python setup.py test && flake 8`).

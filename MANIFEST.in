@@ -1,0 +1,1 @@
+include CONTRIBUTING mitorrent-runner.py LICENSE Makefile README tests/test_*

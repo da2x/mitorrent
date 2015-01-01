@@ -1,0 +1,57 @@
+===========================================
+mitorrent – metainfo torrent file generator
+===========================================
+
+Features
+========
+
+* Generate BitTorrent metainfo file (.torrent) files from files or directories (BEP-3)
+* Supports international characters (Unicode)
+* Optionally include a comment or website address
+* Optionally include one or multiple DHT nodes (BEP-5)
+* Optionally include one or multiple trackers (BEP-12)
+* Optionally flag torrent as private (BEP-27)
+* Can display Magnet URIs after creating torrents (BEP-9)
+* Every peice of informationin the metainfo file can be customized
+
+Requirements
+============
+
+* Python 3.2 or newer
+* 2+ CPUs recommended
+
+
+Quick-start
+===========
+
+Run directly from within the extracted source package without installing or
+the need to specify any extra arguments::
+
+    ./mitorrent-runner.py <file or directory>
+
+Torrents will by default rely on DHT or similar decentralized networks for
+peer discovery. Including a ``--node <dht-node>`` (or
+``--announce <tracker>``) will help clients discover peers and donwload
+faster.
+
+
+Installation
+============
+
+Run the installation script from within the source package::
+
+    python3 setup.py install
+
+Then run the program from anywhere::
+
+    mitorrent <file or directory>
+
+
+Documentation
+=============
+
+Visit the `mitorrent’s website
+<https://www.aeyoun.com/projects/mitorrent/index.html>`_ or run with the
+``--help`` command::
+
+    mitorrent --help
