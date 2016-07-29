@@ -99,7 +99,7 @@ def parse_user_arguments():
                               metavar='INT',
                               type=test_max_piece_length,
                               help='Set a ceiling on the maximum piece length.\
-                                  Value must be 64kiB or larger and a power of\
+                                  Value must be 32kiB or larger and a power of\
                                   two. Piece length is adjusted automatically \
                                   based on the file size up to this limit. \
                                   Only change if you have very specific \
@@ -130,9 +130,9 @@ def parse_user_arguments():
 
 def test_max_piece_length(value):
     value = int(value)
-    if value < (64 * 1024) or not bin(value).count('1') == 1:
+    if value < (32 * 1024) or not bin(value).count('1') == 1:
         raise argparse.ArgumentTypeError(
-            '{0} is not 64kiB or larger and a power of two'.format(value))
+            '{0} is not 32kiB or larger and a power of two'.format(value))
     return value
 
 

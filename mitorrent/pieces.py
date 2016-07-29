@@ -21,10 +21,10 @@ def round_up_2(value):
 def find_piece_size(byte_size, max_piece_length=None):
     if byte_size <= 0:
         return 0
-    elif byte_size <= 64 * 1024:
+    elif byte_size <= 32 * 1024:
         return max(16 * 1024, round_up_2(byte_size))
-    elif byte_size < 64 * 1024 * 2200:
-        return 64 * 1024
+    elif byte_size < 32 * 1024 * 2200:
+        return 32 * 1024
     else:
         if (max_piece_length and
                 max_piece_length == round_up_2(float(max_piece_length))):
