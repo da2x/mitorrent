@@ -49,6 +49,8 @@ class DirectoryScanner:
         infodir = []
         allfiles = []
         total_length = 0
+        infodir_dict = dict()
+
         for subdir, subdirlist, pathlist in os.walk(base_dir,
                                                     followlinks=True):
             if not self._include_dotfiles:
@@ -78,12 +80,14 @@ class DirectoryScanner:
                             relpath),
                         file=sys.stderr)
                     continue
-                infodir.append(self.file2infodict(fullpath, path_components))
+                #infodir.append(self.file2infodict(fullpath, path_components))
+                infodir_dict[fullpath] = self.file2infodict(fullpath, path_components)
                 allfiles.append(fullpath)
                 total_length += file_length(fullpath)
-        return (sorted(allfiles),
-                sorted(infodir, key=lambda pathdict: pathdict['path']),
-                total_length)
+        allfiles = sorted(allfiles, key=str.lower)
+        infodir = [infodir_dict[af] for af in allfiles]
+        print(repr(infodir))
+        return (allfiles, infodir, total_length)
 
     def file2infodict(self, fullpath, path_components):
         return {
