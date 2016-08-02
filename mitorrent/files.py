@@ -86,7 +86,6 @@ class DirectoryScanner:
                 total_length += file_length(fullpath)
         allfiles = sorted(allfiles, key=str.lower)
         infodir = [infodir_dict[af] for af in allfiles]
-        print(repr(infodir))
         return (allfiles, infodir, total_length)
 
     def file2infodict(self, fullpath, path_components):
